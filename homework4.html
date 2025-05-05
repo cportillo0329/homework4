@@ -1,0 +1,358 @@
+<html>
+    <head>
+       <!--
+        Name: Carlos Portillo
+        Name of File: /mis3371/homework3/patient-form.html
+        Date Created: 2/09/2025
+        Date Last Edited: 4/20/2025
+        Description: Travel Service Registration Form
+    -->
+    <html lang="en">
+        <title>Travel Nationwide Services</title>
+        <link rel="stylesheet" href="homework3styles.css">
+    </head>
+    <body>
+        <header>
+            <table width="100%">
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <div class="image">
+                            <img align="center" src="Travelnationwide.png" alt="Travel Nationwide Services" width="80px" id="logo"/>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>TRAVEL NATIONWIDE SERVICES</h2>
+                    </td>
+                    <td valign="bottom" align="right" width="20%">
+                        Today's date:
+                         <span id="today">5/4/2025</span>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <hr>
+        <form action="thankyou.html">
+        <center>
+        <form>
+            <div>
+            <fieldset id="f01"> 
+                <legend>Personal Information:</legend>
+                <table>
+                    <tr>
+                        <td><label for="first_name"> First Name: </label> </td>
+                        <td><input type="text" id="first_name" name="first_name" maxlength="20" required></td>
+                      <td>  
+                        <span id="name_text">error message</span>
+                      </td> 
+                    </tr>
+                    <tr>
+                        <td><label for="last_name">Last Name:</label></td>
+                        <td><input type="text" id="last_name" name="last_name"maxlength="20" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><input type="text" id="address" name="address" maxlength="30" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="zip">Zip Code:</label></td>
+                        <td><input type="text" id="zip" name="zip" maxlength="5" required></td>
+                        <br>
+                        <span class="error" id="zip-error"> </span>
+                        </td>
+    
+                    </tr>
+                    <tr>
+                        <td class="td1"><label for="pwd"> Password:</label> </td>
+                        <td><input 
+                            type="password" 
+                            id="pwd" 
+                            name="pwd" 
+                            minlength="8"
+                            placeholder="Password"
+                            pattern="[A-Za-z']{1,30}" 
+                            onblur="validatePWD()"
+                            required/>
+                            <br>
+                            <span class = "error" id="pwd-error"> 
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td1"><label> Re-enter Password:</label> </td>
+                        <td><input 
+                            type="password" 
+                            id="pwd2" 
+                            name="pwd2" 
+                            minlength="8"
+                            placeholder="Password"
+                            pattern="[A-Za-z']{1,30}" 
+                            required/>
+                            <br> 
+                        </td>
+                    </tr>
+                </table>
+             <div>
+                        <td><label for="City">City:</label></td>
+                        <td> <input type="text" id="city" name="city" maxlength="20" required> 
+                        </td>
+                    </tr>
+                        <tr>
+                        <td><label for="State">State:</label></td>
+                        <td> <select>
+                            <option value="AL">Select City </option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        </td>  
+                        <tr>
+                            <td><label for="email">Email Address:</label></td>
+                            <td> <input type="text" id="email" name="email" maxlength="30" required> </td>
+                        
+                        </tr>
+                        <tr>
+                            <td> <label for="DOB"> Date of Birth </label> </td>
+                            <td> <input type="date" name="DOB" ></td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for = "ssn">Social Security<label></td>
+                            <td><input type ="password" 
+                                name= "ssn" 
+                                id="ssn" 
+                                minlength="9" 
+                                maxlength="11"/>
+                                 
+                             
+                                <span class="error" id="ssn-error"> </span>
+                            </td>
+                            <tr>
+                    </table>
+            </fieldset>
+        </div>
+    </center>
+    <center>
+            <table>
+                <tr>
+                    <td rowspan="2"> 
+                        Check-in Date: <br> <input type="date" name="date">
+                        <br>
+                        Check-in Time: <br> <input type="time" id="time" name="time">
+                    </td>
+                </tr>
+            </table>
+    
+             <!-- Budget -->
+    
+            <center>
+                <br>
+                <tr class="form">
+                    <td align="right">
+                        <label for="budget">Trip Budget: </label>
+                    </td>
+                    <td align="center">
+                        &nbsp;$99
+                        <input type="range" 
+                                class="slider"
+                                id="budget" 
+                                name="budget"
+                                step="100"
+                                min="200"
+                                max="2000"
+                        > 
+                        $2000&nbsp;
+                        <br>
+                        $<span id="rangedisplay">1100</span>
+                    </td>
+                </tr>
+             
+    
+            <!-- Travel Destination Selection -->
+            <table>
+                <tr>
+                    <td>
+                        <div id="d04">
+                            <fieldset>
+                                <legend>Select Travel Destination:</legend>
+                                <select id="loc">
+                                    <option value=""></option>
+                                    <option value="Houston">Houston, TX</option>
+                                    <option value="Dallas">Dallas, TX</option>
+                                    <option value="Austin">Austin, TX</option>
+                                    <option value="Ft. Lauderdale">Ft. Lauderdale, FL</option>
+                                    <option value="Miami">Miami, FL</option>
+                                    <option value="New York">New York, NY</option>
+                                    <option value="Los Angeles">Los Angeles, CA</option>
+                                    <option value="San Francisco">San Francisco, CA</option>
+                                    <option value="San Diego">San Diego, CA</option>
+                                    <option value="Sacremento">Sacremento, CA</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+       
+            <!-- Vehicle Rental Options -->
+            <table>
+                <tr>
+                    <td>
+                        <div id="d05">
+                            <fieldset>
+                                <legend>Vehicle Rental Options:</legend>
+                                <input type="radio" id="truck" name="Veh"> Truck
+                                <br>
+                                <input type="radio" id="Car" name="Veh"> Car
+                                <br>
+                                <input type="radio" id="Van" name="Veh"> Van
+                                <h4>Choose the Following Options:</h4>
+                                <input type="checkbox" name="wheel"> Wheelchair Accessible
+                                <br>
+                                <input type="checkbox" name="smoking"> Smoking Allowed
+                                <br>
+                                <input type="checkbox" name="XM Radio"> Sirius XM Radio
+                                <br>
+                            </fieldset>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+    
+            <!-- Hotel Options -->
+            <table>
+                <tr>
+                    <td>
+                        <div id="d06">
+                            <fieldset>
+                                <legend>Hotel Options:</legend>
+                                <input type="radio" id="Holiday Inn" name="hotel"> Holiday Inn
+                                <br>
+                                <input type="radio" id="Marriot" name="hotel"> Marriot
+                                <br>
+                                <input type="radio" id="Hilton" name="hotel"> Hilton
+                                <br>
+                                <input type="radio" id="Home2Suites" name="hotel"> Home2Suites
+                                <br>
+                                <h4> Room Type:</h4>
+                                <input type="radio" id="room1" name="room"> 1 King Bed & Sofa
+                                <br>
+                                <input type="radio" id="room2" name="room"> Double Queen
+                                <br>
+                                <input type="radio" id="Van" name="room"> Family Suite
+                                <br>
+                            </fieldset>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </center>
+            <table align="center">
+                <tr>
+                    <td>
+                        <button type="Get Data V1" value onclick="get-data-1" id=>Get Data</button>
+                        <button type="reset" value="reset" id="reset">Reset</button>
+                        <button type="validate" value="submit" id="validate">Validate</button>
+                    </td>
+                </tr>
+            </table>
+    
+            <!-- Additional Accommodations -->
+            <form>
+                <center>
+                    Additional Accommodations: <br>
+                    <textarea cols="50" rows="5"> </textarea> 
+                </center>
+            </form>
+        </form>
+         <!-- Iframe Section -->
+        <h3 style="margin-top:40px;">Client Education: Visit CDC for Guidance</h3>
+        <iframe src="https://www.cdc.gov/vaccines-children/travel/index.html" title="Travel Guideline Information"></iframe>
+    
+        <footer id="footer">
+            <center>
+                <div>
+                    <footer>
+                        <center>
+                        <div>
+                            <p>
+                                University of Houston <br />
+                                Houston, Texas 77024 <br />
+                                (832)807-0701
+                            </p>
+                        </div>
+                        <div>
+                            <a href="https://www.uh.edu/">
+                                <input 
+                                type="button"
+                                name="contact" 
+                                id="contact" 
+                                value="Contact Us"
+                 </center>
+        </footer>
+        <script src="hw3.js">
+            const j = new Date();
+            let joutput = j.toLocaleDateString();
+            document.getElementById("today").innerHTML =joutput;
+        
+            let slider = document.getElementById("range");
+            let output = document.getElementById("range-scale");
+            output.innerHTML = slider.value;
+    
+              slider = document.getElementById("budget");
+            var output = document.getElementById("rangedisplay");
+            output.innerHTML = slider.value;
+        
+            slider.oninput= function(){
+                output.innerHTML = this.value;
+            };
+        
+             </script>     
+    </body>
+        </html>
